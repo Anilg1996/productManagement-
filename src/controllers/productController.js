@@ -170,12 +170,11 @@ const getProductbyQuery = async (req, res) => {
 const updateproduct = async (req,res)=>{
 
     try{
-
-    const productid=req.params.productId
-    const body=req.body;
-    let productImage = req.files
-    const {title,description,price}  = body
-    const data={}
+   const data=req.body
+   const productid = req.params.productId
+   const profileimage = req.files
+   const {description,price} = data
+   const obj={}
 
    /*-------------------------productid validation ---------------------------------*/
     if(!productid){

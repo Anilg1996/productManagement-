@@ -168,8 +168,7 @@ const updateCart = async function (req, res) {
 
     } catch(error) {
         res.status(500).send({ status: false, msg: error.msg })
-    }
-}
+    }}
 
 
 const getCart = async (req, res) => {
@@ -185,7 +184,7 @@ const getCart = async (req, res) => {
     } catch (error) {
 
         return res.status(500).send({ status: false, error: error.message })
-    }
+}
 }
 
 const deleteCart = async (req, res) => {
@@ -194,7 +193,7 @@ const deleteCart = async (req, res) => {
 
         let userId = req.params.userId;
 
-        if (!validator.isValidObjectId(productId)) {
+        if (!validator.isValidObjectId(userId)) {
             return res.status(400).send({ status: false, message: "please enter valid productId" })
         }
         
@@ -207,8 +206,7 @@ const deleteCart = async (req, res) => {
     } catch (error) {
 
         return res.status(500).send({ status: false, error: error.message })
-    }
-}
+    }}
 
 
 module.exports={cartCreate,updateCart,deleteCart,getCart}
